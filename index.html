@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MobileMenujs - A Jquery script</title>
+    <link href="/dist/css/main.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism.css"
+    />
+  </head>
+  <body class="overflow-hidden">
+    <nav>
+      <!-- mobile menu  -->
+      <div class="h-[72px] flex justify-between items-center p-4">
+        <h1 class="font-bold text-2xl text-indigo-700 font-serif">
+          MOBILE<span class="text-gray-700">MENU</span>JS
+        </h1>
+        <button
+          data-mobilemenu-trigger=""
+          class="
+            p-2
+            shadow-sm
+            w-10
+            h-10
+            rounded-full
+            flex flex-col
+            justify-center
+            items-center
+          "
+        >
+          <div class="w-full h-[2px] my-[2px] bg-indigo-500"></div>
+          <div class="w-full h-[2px] my-[2px] bg-indigo-500"></div>
+          <div class="w-full h-[2px] my-[2px] bg-indigo-500"></div>
+        </button>
+      </div>
+      <div
+        data-mobilemenu-wrapper="open"
+        class="h-screen bg-gray-50 absolute inset-0 z-10 overflow-y-auto"
+      >
+        <!-- header  -->
+        <div
+          data-mobilemenu-header
+          class="
+            top-0
+            inset-x-0
+            fixed
+            z-10
+            h-[72px]
+            w-full
+            bg-gray-50
+            shadow-sm
+            flex
+            justify-end
+            items-center
+            p-4
+          "
+        >
+          <!-- trigger  -->
+          <button
+            data-mobilemenu-trigger=""
+            class="
+              p-2
+              text-indigo-400
+              font-medium
+              text-lg
+              bg-white
+              shadow-sm
+              w-10
+              h-10
+              rounded-full
+              flex flex-col
+              justify-center
+              items-center
+            "
+          >
+            X
+          </button>
+        </div>
+        <!-- content  -->
+        <div data-mobilemenu-content class="mt-[72px] p-4">
+          <div data-duplicate="10" class="m-2 h-12 bg-gray-200"></div>
+          <br class="" />
+          <div data-duplicate="10" class="m-2 h-12 bg-gray-200"></div>
+        </div>
+      </div>
+    </nav>
+    <!-- intro  -->
+    <div class="p-6">
+      <!-- block  -->
+      <div class="p-4 rounded text-sm bg-gray-100 text-gray-900">
+        <p class="mb-2 text-center">
+          This library is powered by <b>JQUERY</b> and it helps you setup a
+          mobile menu quickly and simply.
+        </p>
+      </div>
+      <br />
+      <!-- download  -->
+      <div class="text-center">
+        <a
+          href="dist/js/mobileMenu.min.js"
+          download=""
+          class="
+          inline-block
+            text-sm
+            font-bold
+            border border-transparent
+            bg-indigo-400
+            text-white
+            px-4
+            py-2
+            rounded-lg
+            hover:border-indigo-400 hover:bg-white hover:text-indigo-400
+            active:scale-90
+            transition-all
+            duration-200
+          "
+          >DOWNLOAD</a
+        >
+      </div>
+    </div>
+    <!-- instructions  -->
+    <div class="p-6">
+      <h1 class="text-2xl mb-4 font-black">Get started</h1>
+      <!-- block  -->
+      <h2 class="text-lg mb-3 font-bold">Add the script</h2>
+      <div class="p-4 rounded text-sm bg-gray-100 text-gray-900">
+        <p class="mb-2">
+          add the script to your html page after jquery and before your custom
+          script.
+        </p>
+        <pre class="border language-html">
+      <code>&lt;!-- jquery cdn ... --&gt;
+      &lt;script src=&quot;/js/mobileMenu.min.js&quot;&gt;&lt;/script&gt;
+      &lt;!-- custom script ...  --&gt;</code>
+              </pre>
+      </div>
+      <br />
+      <!-- block  -->
+      <h2 class="text-lg mb-3 font-bold">Define the markup</h2>
+      <div class="p-4 rounded text-sm bg-gray-100 text-gray-900">
+        <p class="mb-2">
+          This is the recommended html structure. Please don't forget adding
+          those attributes like in the example, otherwise te script will not be
+          able to work properly.
+        </p>
+        <pre class="border language-html">
+      <code>
+      &lt;!-- open  --&gt;
+      &lt;button data-mobilemenu-trigger=&quot;&quot;&gt;&lt;/button&gt;
+      &lt;div data-mobilemenu-wrapper=&quot;&quot;&gt;
+        &lt;!-- header  --&gt;
+        &lt;div data-mobilemenu-header&gt;
+            &lt;!-- close button  --&gt;
+            &lt;button data-mobilemenu-trigger&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;!-- content  --&gt;
+        &lt;div data-mobilemenu-content&gt;
+          &lt;!-- menu content here  --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      </code>
+              </pre>
+      </div>
+      <br />
+      <!-- block  -->
+      <h2 class="text-lg mb-3 font-bold">Call the constructor</h2>
+      <div class="p-4 rounded text-sm bg-gray-100 text-gray-900">
+        <p class="mb-2">
+          Run the script by creating instances for each dropdown on your page.
+        </p>
+        <pre class="border language-javascript">
+      <code>
+        const menu = new MobileMenu();
+        // attach events
+        menu.init();
+        // possible manipulations
+        // menu.open();
+        // menu.close();;</code>
+               </pre>
+      </div>
+      <br />
+      <!-- block  -->
+      <h2 class="text-lg mb-3 font-bold">Configuration</h2>
+      <div class="p-4 rounded text-sm bg-gray-100 text-gray-900">
+        <p class="mb-2">
+          The constructor accepts an optional object that can have any of the following
+          options:
+        </p>
+        <pre class="border language-javascript">
+            <code>
+      {
+        onOpen : "a callback function that is called when menu opens. It receives the instance as a parameter",
+        onClose :  "a callback function that is called when menu closes. It receives the instance as a parameter",
+        rtl = "false by default. pass true if you want to reverse the direction of the menu movement",
+      }
+            </code>
+              </pre>
+      </div>
+      <br />
+    </div>
+    <!-- jquery  -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- main script  -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="/dist/js/mobileMenu.min.js"></script>
+    <script src="/dist/js/main.min.js"></script>
+  </body>
+</html>
