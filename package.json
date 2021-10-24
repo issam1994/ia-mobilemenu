@@ -1,7 +1,7 @@
 {
-  "name": "jquery-dropdown",
+  "name": "ia-mobilemenu",
   "version": "1.0.0",
-  "description": "a javascript lib for creating functional dropdowns.",
+  "description": "ia-mobilemenu is a jquery script lib for for making beautiful mobile menus.",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
